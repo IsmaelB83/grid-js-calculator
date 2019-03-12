@@ -21,7 +21,10 @@ function buttonEventListener (event) {
             }
             break;
         case '=':
-            resultado.value = eval(resultado.value);
+            if (resultado.value !== "0" && 
+                !isNaN(parseInt(resultado.value[resultado.value.length-1])))  {
+                resultado.value = eval(resultado.value);
+            }
             break;
         default:
             if (resultado.value === '0') resultado.value = '';
